@@ -1,0 +1,25 @@
+{% extends "base.html" %} 
+{% block content %}
+<!-- <div> -->
+    <a href="{% url 'home' %}">home</a>
+    <h1>VMLR&R</h1>
+<!-- </div> -->
+
+<div>
+    <div class="sign">
+        <form method="post" action="{% url 'signup' %}">
+            {% csrf_token %}
+            {% for field in form %}
+            <div class="forma">
+                {{ field.errors }}
+                {{ field }} 
+            </div>
+            {% endfor %}
+            <center>
+                <button class="" type="submit">Sign up now</button>
+                <button class="form-button" type="submit">Already have an account& Log in</button>
+            </center>
+    </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,94 @@
+body {
+    background-color:aqua;
+}
+
+
+
+  .img-1 {
+    background-image: url(../images/vmlr-997456.webp);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 700px;
+    height: 400px;
+  }
+
+  .img-2 {
+    background-image: url(../images/img2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 700px;
+    height: 400px;
+  }
+
+  .img-3 {
+    background-image: url(../images/img3.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 700px;
+    height: 400px;
+  }
+
+@media (max-width: 376px) {
+    body {
+        background-color: rgb(135, 53, 94);
+        color: white;
+        /* margin: 0 auto; */
+    }
+
+    h1 {
+        font-size: 14px;
+    }
+
+    .pakets {
+        max-width: 300px;
+    }
+
+    .sign {
+        padding: 90px 20px;
+        background-color: aliceblue;
+        border-radius: 20px;
+        /* padding: 20px; */
+    }
+
+    .forma input {
+        background-color: transparent;
+        border: none;
+        padding: 20px;
+    }
+
+    button {
+        background-color: rgb(173, 68, 121);
+        border-radius: 30px;
+        border: none;
+        padding: 15px 90px;
+        color: white;
+        margin: 10px;
+    }
+
+    .form-button {
+        background-color: transparent;
+        border: solid 1px rgb(173, 68, 121);
+        color: rgb(173, 68, 121);
+        padding: 10px 30px;
+    }
+
+    .img-1, .img-2, .img-3 {
+        max-height: 100px;
+    }
+
+    .pakets img {
+        max-width: 100px;
+    }
+
+    .pakets {
+        background-color: rgb(200, 206, 206);
+        padding: 10px;
+        display: flex;
+        align-items: center;
+    }
+
+
+}
