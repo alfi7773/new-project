@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>{{ user.username }}</h1>
+
+<h2>Мои пакеты:</h2>
+<ul>
+  {% for paket in my_pakets %}
+    <li>{{ paket.buy.name }} — {{ paket.buy.price }}</li>
+  {% empty %}
+    <li>У вас пока нет купленных пакетов.</li>
+  {% endfor %}
+</ul>
+
+{% endblock %}

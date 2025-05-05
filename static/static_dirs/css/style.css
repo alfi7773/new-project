@@ -1,8 +1,12 @@
-body {
+/* body {
     background-color:aqua;
 }
+ */
 
 
+ a {
+    text-decoration: none;
+ }
 
   .img-1 {
     background-image: url(../images/vmlr-997456.webp);
@@ -31,7 +35,7 @@ body {
     height: 400px;
   }
 
-@media (max-width: 376px) {
+/* @media (max-width: 426px) { */
     body {
         background-color: rgb(135, 53, 94);
         color: white;
@@ -42,9 +46,9 @@ body {
         font-size: 14px;
     }
 
-    .pakets {
+    /* .pakets {
         max-width: 300px;
-    }
+    } */
 
     .sign {
         padding: 90px 20px;
@@ -91,7 +95,7 @@ body {
     }
 
 
-}
+/* }
 
 
 @media (max-width: 426px) {
@@ -99,7 +103,6 @@ body {
     body {
         background-color: rgb(135, 53, 94);
         color: white;
-        /* margin: 0 auto; */
     }
 
     h1 {
@@ -114,7 +117,6 @@ body {
         padding: 90px 20px;
         background-color: aliceblue;
         border-radius: 20px;
-        /* padding: 20px; */
     }
 
     .forma input {
@@ -153,4 +155,4 @@ body {
         display: flex;
         align-items: center;
     }
-}
+} */

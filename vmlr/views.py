@@ -1,4 +1,4 @@
-from django.shortcuts import redirect, render
+from django.shortcuts import get_object_or_404, redirect, render
 from django.views import View
 from django.views.generic import CreateView, ListView
 from django.contrib.auth.forms import PasswordChangeForm
@@ -16,7 +16,22 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import UpdateView
 from django.urls import reverse_lazy
 from .forms import UserUpdateForm
-from .models import Pakets
+from .models import MyPakets, Pakets
+from django.contrib.auth.decorators import login_required
+
+from django.views.generic import TemplateView
+from django.contrib.auth.mixins import LoginRequiredMixin
+from vmlr.models import MyPakets
+
+class ProfileUser(LoginRequiredMixin, TemplateView):
+    template_name = 'profile.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['user'] = self.request.user
+        context['my_pakets'] = MyPakets.objects.filter(user=self.request.user)
+        return context
+
 
 
 class SignUpView(CreateView):
@@ -48,6 +63,12 @@ class Login(LoginView):
         context['forms'] = self.get_form()  
         return context
     
+# @login_required
+def buy_paket(request, id):
+    if request.method == 'POST':
+        paket = get_object_or_404(Pakets, id=id)
+        MyPakets.objects.create(buy=paket, user=request.user)
+        return redirect('/') 
     
 
 class CustomLogoutView(LogoutView):
@@ -59,6 +80,11 @@ class MainView(ListView):
     queryset = Pakets.objects.all()
     context_object_name = 'pakets'
 
+
+# class ProfileUser (ListView):
+#     template_name = 'profile.html'
+#     context_object_name = 'user'
+#     queryset = User.objects.all()
 
 # class ProfileUser(LoginRequiredMixin, View):
 #     template_name = 'profile/profile.html'
