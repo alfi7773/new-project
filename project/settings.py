@@ -15,6 +15,8 @@ import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+# SECRET_KEY = '6)yq&q3vpc)stlikawya6ouz=*5ujzisnl3gh#^^ax%*#ldssz'
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -149,5 +151,5 @@ SESSION_ENGINE = 'django.contrib.sessions.backends.db'  # используетс
 #     'allauth.account.auth_backends.AuthenticationBackend',
 # ]
 
-SITE_ID = 1
+# SITE_ID = 1
 
